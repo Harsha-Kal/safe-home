@@ -1,0 +1,20 @@
+# Arduino / ESP32 build artifacts
+*.o
+*.obj
+*.elf
+*.bin
+*.hex
+build/
+.arduino/
+
+# Python compiled
+__pycache__/
+*.py[cod]
+
+# Secrets (prevent committing personal Wi-Fi / Bot tokens)
+config.h
+secrets.h
+
+# OS files
+.DS_Store
+Thumbs.db
