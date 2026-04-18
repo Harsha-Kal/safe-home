@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="doorGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="880" height="440" fill="url(#bg)" rx="12"/>
+
+  <!-- Title -->
+  <text x="440" y="32" font-family="sans-serif" font-size="18" font-weight="bold" fill="#f8fafc" text-anchor="middle">
+    Safe-Home: Invisible Doorframe NFC Security Camera System
+  </text>
+  <text x="440" y="52" font-family="sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">
+    Narrow Hidden Loop Antenna + ESP32-S3 Camera + Wi-Fi Push Notification Pipeline
+  </text>
+
+  <!-- Left: Physical Doorframe Cutaway -->
+  <g transform="translate(30, 80)">
+    <!-- Doorframe outline -->
+    <rect x="0" y="0" width="140" height="310" rx="8" fill="url(#doorGrad)" stroke="#64748b" stroke-width="2"/>
+    <text x="70" y="24" font-family="sans-serif" font-size="11" font-weight="bold" fill="#cbd5e1" text-anchor="middle">DOORFRAME</text>
+    <text x="70" y="38" font-family="sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">(Plastic Molding)</text>
+
+    <!-- Hidden Camera Pinhole -->
+    <circle cx="70" cy="80" r="14" fill="#0f172a" stroke="#06b6d4" stroke-width="2"/>
+    <circle cx="70" cy="80" r="6" fill="#06b6d4"/>
+    <text x="70" y="110" font-family="sans-serif" font-size="9" fill="#67e8f9" text-anchor="middle" font-weight="bold">Hidden Camera</text>
+
+    <!-- Hidden Narrow Antenna Coil inside doorframe -->
+    <rect x="25" y="130" width="90" height="150" rx="4" fill="none" stroke="#f59e0b" stroke-width="3" stroke-dasharray="6,3"/>
+    <rect x="32" y="137" width="76" height="136" rx="3" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,3"/>
+    <rect x="39" y="144" width="62" height="122" rx="2" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,3"/>
+    <text x="70" y="200" font-family="sans-serif" font-size="10" font-weight="bold" fill="#fbbf24" text-anchor="middle">HIDDEN COIL</text>
+    <text x="70" y="215" font-family="sans-serif" font-size="8" fill="#fde68a" text-anchor="middle">25mm x 75mm</text>
+    <text x="70" y="228" font-family="sans-serif" font-size="8" fill="#fde68a" text-anchor="middle">4 turns 28 AWG</text>
+  </g>
+
+  <!-- Tap Action Graphic -->
+  <g transform="translate(185, 230)">
+    <rect x="0" y="-30" width="75" height="120" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="37" y="15" font-family="sans-serif" font-size="9" font-weight="bold" fill="#38bdf8" text-anchor="middle">PHONE / TAG</text>
+    <text x="37" y="30" font-family="sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">NFC Tap</text>
+    <!-- Tap arrow -->
+    <path d="M 0 30 L -15 30" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- Center: Circuit Schematic -->
+  <g transform="translate(275, 80)">
+    <rect x="0" y="0" width="310" height="310" rx="8" fill="#111827" stroke="#374151" stroke-width="1.5"/>
+    <text x="155" y="24" font-family="sans-serif" font-size="11" font-weight="bold" fill="#38bdf8" text-anchor="middle">
+      TRIGGER &amp; DETECTOR CIRCUIT
+    </text>
+
+    <!-- Rails -->
+    <line x1="20" y1="90" x2="280" y2="90" stroke="#f8fafc" stroke-width="2"/>
+    <line x1="20" y1="230" x2="280" y2="230" stroke="#f8fafc" stroke-width="2"/>
+
+    <!-- L1 Coil -->
+    <line x1="50" y1="90" x2="50" y2="120" stroke="#f8fafc" stroke-width="2"/>
+    <path d="M 50 120 C 65 120, 65 140, 50 140 C 65 140, 65 160, 50 160 C 65 160, 65 180, 50 180 C 65 180, 65 200, 50 200" fill="none" stroke="#f59e0b" stroke-width="3"/>
+    <line x1="50" y1="200" x2="50" y2="230" stroke="#f8fafc" stroke-width="2"/>
+    <text x="25" y="155" font-family="sans-serif" font-size="10" font-weight="bold" fill="#fbbf24">L1</text>
+    <text x="15" y="170" font-family="monospace" font-size="9" fill="#cbd5e1">1.8 µH</text>
+
+    <!-- C1 Tuning Cap -->
+    <line x1="110" y1="90" x2="110" y2="145" stroke="#f8fafc" stroke-width="2"/>
+    <line x1="95" y1="145" x2="125" y2="145" stroke="#38bdf8" stroke-width="3"/>
+    <line x1="95" y1="155" x2="125" y2="155" stroke="#38bdf8" stroke-width="3"/>
+    <line x1="110" y1="155" x2="110" y2="230" stroke="#f8fafc" stroke-width="2"/>
+    <text x="130" y="148" font-family="sans-serif" font-size="10" font-weight="bold" fill="#38bdf8">C1</text>
+    <text x="130" y="162" font-family="monospace" font-size="9" fill="#93c5fd">82 pF</text>
+
+    <!-- D1 Rectifier Diode -->
+    <g transform="translate(170, 90)">
+      <polygon points="0,-10 20,0 0,10" fill="#10b981" stroke="#34d399" stroke-width="1.5"/>
+      <line x1="20" y1="-12" x2="20" y2="12" stroke="#34d399" stroke-width="2"/>
+      <text x="10" y="-15" font-family="sans-serif" font-size="9" font-weight="bold" fill="#34d399" text-anchor="middle">BAT54</text>
+    </g>
+
+    <!-- C2 Smoothing + R1 Bleeder -->
+    <line x1="225" y1="90" x2="225" y2="145" stroke="#f8fafc" stroke-width="2"/>
+    <line x1="215" y1="145" x2="235" y2="145" stroke="#38bdf8" stroke-width="3"/>
+    <line x1="215" y1="155" x2="235" y2="155" stroke="#38bdf8" stroke-width="3"/>
+    <line x1="225" y1="155" x2="225" y2="230" stroke="#f8fafc" stroke-width="2"/>
+    <text x="240" y="148" font-family="sans-serif" font-size="9" font-weight="bold" fill="#38bdf8">C2: 10nF</text>
+    <text x="240" y="162" font-family="sans-serif" font-size="9" font-weight="bold" fill="#94a3b8">R1: 100k</text>
+
+    <!-- Output Trigger Arrow to MCU -->
+    <path d="M 280 90 L 305 90" stroke="#a855f7" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="235" y="75" font-family="sans-serif" font-size="9" font-weight="bold" fill="#c084fc">2.5V Wake Pulse</text>
+
+    <!-- GND Label -->
+    <line x1="155" y1="230" x2="155" y2="250" stroke="#f8fafc" stroke-width="2"/>
+    <line x1="145" y1="250" x2="165" y2="250" stroke="#f8fafc" stroke-width="2"/>
+    <line x1="148" y1="255" x2="162" y2="255" stroke="#f8fafc" stroke-width="2"/>
+    <text x="155" y="272" font-family="sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">GND</text>
+  </g>
+
+  <!-- Right: ESP32-S3 Camera & Wi-Fi Notification -->
+  <g transform="translate(605, 80)">
+    <rect x="0" y="0" width="245" height="310" rx="8" fill="#1e1b4b" stroke="#6366f1" stroke-width="2"/>
+    <text x="122" y="24" font-family="sans-serif" font-size="12" font-weight="bold" fill="#a5b4fc" text-anchor="middle">
+      ESP32-S3 CAMERA MODULE
+    </text>
+
+    <!-- OV2640 Camera Block -->
+    <rect x="25" y="45" width="195" height="70" rx="6" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5"/>
+    <circle cx="65" cy="80" r="16" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+    <circle cx="65" cy="80" r="8" fill="#06b6d4"/>
+    <text x="140" y="75" font-family="sans-serif" font-size="10" font-weight="bold" fill="#67e8f9">OV2640 SENSOR</text>
+    <text x="140" y="90" font-family="sans-serif" font-size="9" fill="#94a3b8">Instant Snapshot</text>
+
+    <!-- Interrupt Pin -->
+    <rect x="25" y="130" width="195" height="35" rx="4" fill="#312e81"/>
+    <text x="122" y="152" font-family="monospace" font-size="10" fill="#fde047" text-anchor="middle">
+      TRIGGER: GPIO 1 / 4
+    </text>
+
+    <!-- Wi-Fi Transmission -->
+    <path d="M 122 185 Q 92 205, 122 225" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    <path d="M 122 175 Q 82 205, 122 235" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    <text x="122" y="208" font-family="sans-serif" font-size="10" font-weight="bold" fill="#38bdf8" text-anchor="middle">
+      Wi-Fi 2.4 GHz
+    </text>
+
+    <!-- Smartphone Notification Box -->
+    <rect x="20" y="240" width="205" height="55" rx="6" fill="#0284c7" stroke="#7dd3fc" stroke-width="1.5"/>
+    <text x="122" y="260" font-family="sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      SMARTPHONE ALERT
+    </text>
+    <text x="122" y="278" font-family="sans-serif" font-size="9" fill="#e0f2fe" text-anchor="middle">
+      Photo + Door Alert Push Notification
+    </text>
+  </g>
+
+  <!-- Footnote -->
+  <text x="440" y="415" font-family="sans-serif" font-size="11" fill="#64748b" text-anchor="middle">
+    NFC Doorframe Tap -&gt; Harvested Pulse Triggers ESP32-S3 Camera -&gt; Photo Sent Over Wi-Fi to Smartphone
+  </text>
+</svg>
