@@ -42,39 +42,6 @@ Detailed vector schematic: [hardware/schematic.svg](hardware/schematic.svg)
 
 ---
 
-## Bill of Materials
-
-| Component | Specification | Purpose |
-| :--- | :--- | :--- |
-| **Microcontroller & Camera** | ESP32-S3 Camera Board (OV2640 sensor) | Low-power controller with camera interface and 2.4 GHz Wi-Fi |
-| **Custom Antenna Coil** | 28 AWG enamelled magnet wire | 4-turn rectangular coil ($25 \times 75\text{ mm}$, $L \approx 1.75\ \mu\text{H}$) |
-| **Tuning Capacitor** | 82 pF ceramic capacitor (C0G/NP0) | Resonates with custom coil at 13.56 MHz |
-| **Detector Diode** | BAT54 Schottky diode (or 1N4148) | Rectifies high-frequency RF into DC |
-| **Smoothing Filter** | 10 nF ceramic capacitor + 100 kΩ resistor | Smoothes ripple and discharges line after tap ($RC \approx 1\text{ ms}$) |
-| **Enclosure** | Standard hollow plastic/PVC doorframe molding | Completely hides the antenna, camera pinhole, and controller |
-
----
-
-## Repository Structure
-
-```
-safe-home/
-├── README.md                      # Project overview, workflow & quickstart
-├── LICENSE                        # MIT License
-├── hardware/
-│   ├── doorframe_antenna.py       # Python calculator for rectangular coil geometry & LC tuning
-│   └── schematic.svg              # Complete system and circuit schematic
-├── firmware/
-│   ├── safe_home.ino              # Main ESP32-S3 camera & notification firmware
-│   ├── camera_pins.h              # Pin mappings for ESP32-S3 camera modules
-│   └── config_template.h          # Wi-Fi and Telegram push notification credentials
-└── docs/
-    ├── doorframe_installation.md  # Step-by-step physical installation & coil winding guide
-    └── writeup.md                 # Technical report on antenna design and interaction goals
-```
-
----
-
 ## Quickstart Guide
 
 ### 1. Verify Antenna Inductance & LC Tuning
@@ -98,10 +65,3 @@ python hardware/doorframe_antenna.py
 - Follow [docs/doorframe_installation.md](docs/doorframe_installation.md) to place the coil and lens behind the doorframe trim.
 - Tap your phone or NFC keychain against the doorframe. Within 2 seconds, you will receive a push notification on your smartphone with a clear photo snapshot.
 
----
-
-## Documentation
-- **Physical Installation Guide:** [docs/doorframe_installation.md](docs/doorframe_installation.md)
-- **Technical Write-Up & Evaluation:** [docs/writeup.md](docs/writeup.md)
-
-*Author: Harsha Kalavagunta (<sreeharshakalavagunta@gmail.com>)*
