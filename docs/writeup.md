@@ -10,7 +10,7 @@ Traditional home security interfaces rely on visible hardware: conspicuous keypa
 
 ---
 
-## 2. Antenna Design & Space Constraints (Goal 4)
+## 2. Antenna Design & Space Constraints
 
 ### The Challenge of Physical Constraints
 Off-the-shelf RFID/NFC antennas are square or circular (~45 mm to 55 mm diameter). Because standard residential doorframe trim has an interior channel width of only 25 mm to 30 mm, commercial antennas physically cannot fit inside.
@@ -32,7 +32,7 @@ With slight parasitic board capacitance, resonance centers precisely around **13
 
 ---
 
-## 3. Signal Rectification & Camera Trigger (Goal 5)
+## 3. Signal Rectification & Camera Trigger
 
 Connecting the coil to a high-speed **BAT54 Schottky diode** ($V_F \approx 0.28\text{ V}$), a **10 nF filter capacitor**, and a **100 kΩ bleeder resistor** creates an envelope detector:
 - The phone's alternating 13.56 MHz RF bursts are rectified into a steady **2.2V to 3.1V DC pulse**.
@@ -41,7 +41,7 @@ Connecting the coil to a high-speed **BAT54 Schottky diode** ($V_F \approx 0.28\
 
 ---
 
-## 4. Invisible Checkpoint Interaction Design (Goal 6)
+## 4. Invisible Checkpoint Interaction Design
 
 ### Interaction Comparison: Conventional Doorbell vs Safe-Home
 
